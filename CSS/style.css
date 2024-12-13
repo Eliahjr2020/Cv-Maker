@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Bordered form */
 form {
@@ -40,24 +45,25 @@ button:hover {
 /* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
-  margin: 10px 0 15px 0;
+  margin: 5px 0 10px 0;
 }
 
 /* Avatar image */
 img.avatar {
-  width: 20%;
+  width: 15%;
   border-radius: 50%;
 }
 
 /* Add padding to containers */
 .container {
   padding: 16px;
+  height: fit-content;
 }
 
 /* The "Forgot password" text */
 span.psw {
   float: right;
-  padding-top: 16px;
+  /* padding-top: 5px; */
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -127,3 +133,173 @@ span.psw {
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
+
+/* Sections styling */
+
+.section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;    /* Center content vertically */
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#home_section {
+  background-color: #d6c083; /* Blue */
+}
+
+#mission_section {
+  background-color: #bde7dd; /* Red */
+}
+
+#vision_section {
+  background-color: #32c770; /* Green */
+}
+
+#about_section {
+  background-color: #99eebd; /* Blue */
+}
+
+#contact_section {
+  background-color: #44aa63; /* Red */
+}
+
+#team_section {
+  background-color: #2ecc71; /* Green */
+}
+
+#faqs_section {
+  background-color: #9c8a57; /* Green */
+}
+
+
+/* Footer styling */
+
+.map-cont{
+ background-color: brown;
+ width: 95%; 
+ height: 400px;
+ margin: 30px;
+}
+
+.mapouter{
+  position:relative;
+  text-align:right;
+  width:100%;
+  height:inherit;}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  width:100%;
+  height:inherit;
+}
+
+.gmap_iframe {
+  width:100%!important;
+  height:inherit!important;
+}
+
+.quick-links{
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.quick-links h2{
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+
+.quick-links .link-cont{
+  display: flex;
+  /* background-color: aqua; */
+  margin: 5px;
+  height: 50px;
+  width: 32%;
+}
+
+.quick-links .link-cont img{
+  width: 25px;
+  padding: 10px;
+}
+
+.quick-links .link-cont a{
+  margin: auto 0px;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+footer{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+footer a{
+  text-decoration: none;
+  font-size: large;
+}
+
+footer p{
+  padding: 5px;
+}
+
+/* responsiveness of the page */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .map-cont, .form-cont{
+      width: 45%;
+      height: 500px;
+  }
+
+  section{
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin: auto;
+  }
+
+  .map-cont{
+      background-color: brown;
+      width: 80%;
+      height: 300px;
+      display: none;
+      margin: 30px;
+   }
+
+}
+
+    @media (min-width: 901px) and (max-width: 1030px) {
+      section{
+          width: 90%;
+          display: flex;
+          /* background-color: blue; */
+          flex-wrap: wrap;
+          justify-content: space-between;
+          /* flex-direction: column; */
+          margin: auto;
+      }
+
+      .map-cont, .form-cont{
+          width: 45%;
+          height: 500px;
+      }
+
+      .quick-links .link-cont{
+          display: flex;
+          margin: 5px;
+          height: 50px;
+          width: 40%;
+      }
+  }
