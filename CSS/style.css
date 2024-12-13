@@ -141,38 +141,118 @@ span.psw {
   display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;    /* Center content vertically */
-  color: white;
+  color: #333333 ;
   font-size: 2rem;
   text-align: center;
 }
 
-#home_section {
-  background-color: #d6c083; /* Blue */
+/* General Section Styling */
+.text-image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  flex-wrap: wrap; /* Ensure responsiveness */
 }
 
-#mission_section {
-  background-color: #bde7dd; /* Red */
+.text-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
 }
 
-#vision_section {
-  background-color: #32c770; /* Green */
+.text-content h1 {
+  margin-bottom: 20px;
 }
 
-#about_section {
-  background-color: #99eebd; /* Blue */
+.text-content p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #333333 ;
 }
 
-#contact_section {
-  background-color: #44aa63; /* Red */
+/* text animations */
+
+.text-content p,h1{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
-#team_section {
-  background-color: #2ecc71; /* Green */
+.visible h1, .visible p {
+  opacity: 1;
+  transform: translateY(0); /* Animate to original position */
 }
 
-#faqs_section {
-  background-color: #9c8a57; /* Green */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with hidden text */
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1; /* End with fully visible text */
+    transform: translateY(0); /* End at the normal position */
+  }
 }
+
+.image-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternating Layout */
+#home_section .text-image-section {
+  flex-direction: row;
+}
+
+#mission_section .text-image-section {
+  flex-direction: row-reverse;
+}
+
+#vision_section .text-image-section {
+  flex-direction: row;
+}
+
+#about_section .text-image-section {
+  flex-direction: row-reverse;
+}
+
+#contact_section .text-image-section {
+  flex-direction: row;
+}
+
+#team_section .text-image-section {
+  flex-direction: row-reverse;
+}
+
+#faqs_section .text-image-section {
+  flex-direction: row;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .text-image-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content, .image-content {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
 
 
 /* Footer styling */
@@ -203,7 +283,9 @@ span.psw {
 }
 
 .quick-links{
-  width: 80%;
+
+  width: 98%;
+  background-color: #493628 ;
   margin: auto;
   padding: 30px;
   display: flex;

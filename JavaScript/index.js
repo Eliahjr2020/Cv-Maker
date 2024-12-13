@@ -38,4 +38,22 @@ function openNav() {
     window.addEventListener("scroll", setActiveLink);
   });
 
+  // Create an intersection observer to detect when a section is in view
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing after the animation is triggered
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger animation when 50% of the section is visible
+  });
+
+  // Observe all sections
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+
+
   

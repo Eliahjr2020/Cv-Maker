@@ -1,8 +1,8 @@
 body{
-    background-color: white;
+    background-color: #F4F1E1;
   }
   .topnav {
-      background-color: #ab886d;
+      background-color: #493628 ;
       overflow: hidden;
       height: 58px;
       width: 100%;
@@ -35,13 +35,14 @@ body{
     
     /* Change the color of links on hover */
     .topnav a:hover {
-      background-color: #ddd;
+      background-color: #D1A15B ;
       color: black;
+      font-weight: bold;
     }
     
     /* Add a color to the active/current link */
     .topnav a.active {
-      background-color: #493628;
+      background-color: #ab886d;
       color: white;
     }
   
