@@ -11,6 +11,21 @@ function openNav() {
     document.body.style.backgroundColor = "white";
   }
 
-  // Scripts related to forms
+  // Navigation active links
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll(".nav-link");
+  
+    // Function to remove 'active' class from all links
+    const removeActiveClasses = () => {
+      navLinks.forEach(link => link.classList.remove("active"));
+    };
+  
+    // Function to add 'active' class to the current link
+    const addActiveClass = (id) => {
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    };
 
   
