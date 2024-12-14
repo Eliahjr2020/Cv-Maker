@@ -38,12 +38,22 @@ function openNav() {
     window.addEventListener("scroll", setActiveLink);
   });
 
+
   // Create an intersection observer to detect when a section is in view
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // Add the 'visible' class to trigger the animation
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Stop observing after the animation is triggered
+
+        // Reset animation by removing and re-adding the class after a brief delay
+        setTimeout(() => {
+          entry.target.classList.remove('visible');
+          // Re-add the 'visible' class to trigger the animation again when revisiting
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 50); // Short delay to reset animation
+        }, 1000); // Wait for the animation to finish before resetting
       }
     });
   }, {
@@ -54,6 +64,7 @@ function openNav() {
   document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
   });
+
 
 
   

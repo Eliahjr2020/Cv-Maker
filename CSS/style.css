@@ -139,9 +139,10 @@ span.psw {
 .section {
   height: 100vh; /* Full viewport height */
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center;    /* Center content vertically */
-  color: #333333 ;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  color: #333333;
   font-size: 2rem;
   text-align: center;
 }
@@ -153,6 +154,8 @@ span.psw {
   justify-content: center;
   padding: 40px 20px;
   flex-wrap: wrap; /* Ensure responsiveness */
+  width: 100%; /* Full width to align items properly */
+  max-width: 1200px; /* Optional: restrict max width */
 }
 
 .text-content {
@@ -168,12 +171,11 @@ span.psw {
 .text-content p {
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #333333 ;
+  color: #333333;
 }
 
-/* text animations */
-
-.text-content p,h1{
+/* Text animations */
+.text-content p, h1 {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1.5s ease, transform 1.5s ease;
@@ -209,6 +211,50 @@ span.psw {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.home_btn {
+  width: 100%;
+  margin-top: 20px; /* Space above button */
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #493628;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home_btn:hover {
+  background-color: #D1A15B; /* Change background color */
+  transform: scale(1.1); /* Slightly enlarge the button */
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+/* Center button below the sections */
+.section .home_btn {
+  width: 30%;
+  align-self: center; /* Center button horizontally */
+}
+
+
+
+/* Adjust responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .text-image-section {
+    flex-direction: column; /* Stack text and image vertically */
+  }
+
+  .text-content, .image-content {
+    max-width: 100%; /* Allow full width on small screens */
+  }
+
+  .home_btn {
+    width: 60%; /* Reduce button width for smaller screens */
+  }
 }
 
 /* Alternating Layout */
